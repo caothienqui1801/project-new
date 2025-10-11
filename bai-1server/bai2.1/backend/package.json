@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "bai2",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CaoThienQui",
+  "license": "ISC"
+}
