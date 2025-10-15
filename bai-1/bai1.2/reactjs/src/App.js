@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import About from "./components/About";
 import UsersList from "./components/UsersList.jsx";
+import UserDetail from "./components/UserDetail.jsx";
 
 export default function App() {
     return (
@@ -11,6 +12,7 @@ export default function App() {
             </nav>
             <Routes>
                 <Route path="/users" element={<UsersList />} />
+                <Route path="/users/:id" element={<UserDetail />} />
                 <Route path="/about" element={<About />} />
             </Routes>
 
@@ -19,3 +21,4 @@ export default function App() {
 
     );
 }
+

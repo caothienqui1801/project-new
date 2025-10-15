@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function UserList() {
   const [users, setUsers] = useState([]);
@@ -21,7 +22,11 @@ export default function UserList() {
     <ul>
       {users.map((u, index) => (
         <li key={u.id}>
-          {index + 1} {u.name} - {u.email}
+          {/* Click vào tên user dể xem chi tiết! */}
+          <Link to={`/users/${u.id}`}>
+            {index + 1} {u.name}
+          </Link>{" "}
+          - {u.email}
         </li>
       ))}
     </ul>
