@@ -17,6 +17,7 @@ export default function UserList() {
   if (loading) {
     return <h3>Loading...</h3>;
   }
+  //index thêm số thứ tự cho list
 
   return (
     <ul>
