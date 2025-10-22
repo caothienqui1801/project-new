@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./UsersList.css";
 
 export default function UserList() {
   const [users, setUsers] = useState([]);
@@ -25,7 +26,8 @@ export default function UserList() {
 
 
   return (
-    <div>
+    <div className="hi">
+
       <h2>Danh sách người dùng</h2>
 
       {/*Ô nhập tìm kiếm*/}
@@ -39,20 +41,21 @@ export default function UserList() {
       />
 
       {/* Danh sách kết quả */}
-      <ul>
-        {filteredUsers.length > 0 ? (
-          filteredUsers.map((u, index) => (
-            <li key={u.id}>
-              <Link to={`/users/${u.id}`}>
-                {index + 1} {u.name}
-              </Link>{""}
-              -{u.email}
-            </li>
-          ))
-        ) : (
-          <p>Không tìm thấy người dùng!!</p>
-        )}
-      </ul>
+      <div className="hello">
+        <ul>
+          {filteredUsers.length > 0 ? (
+            filteredUsers.map((u, index) => (
+              <div key={u.id} className={`user-card color-${index % 4}`}>
+                <p><trong>Tên</trong> {u.name}</p>
+                <p><trong>Email</trong> {u.email}</p>
+                <Link to={`/users/${u.id}`}>Xem chi tiết tại đây!!</Link>
+              </div>
+            ))
+          ) : (
+            <p>Không tìm thấy người dùng!!</p>
+          )}
+        </ul>
+      </div>
     </div>
   );
 }
